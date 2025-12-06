@@ -17,3 +17,5 @@ The `WineQT.csv` dataset contains various wine properties and a quality score.
 1.  Install necessary libraries (e.g., `pyearth`, `pandas`, `scikit-learn`).
 2.  Place `WineQT.csv` in the notebook directory.
 3.  Execute cells sequentially, starting with the `if __name__ == "__main__":` block at the end.
+
+Expected runtime is around 31 sec
