@@ -54,7 +54,7 @@ def models(BOR):
   np.random.seed(SEED)
 
   y = BOR["quality"]
-  X = BOR.drop(columns=["quality"])
+  X = BOR.drop(columns=["quality","Id"])
 
   # 3. Train-test split
   X_train, X_test, y_train, y_test = train_test_split(
