@@ -45,9 +45,8 @@ def choose_best_ccp_alpha(X, y, cv_splits=5, scoring='accuracy'):
 
     return best_alpha_min_error, best_alpha_1se, results
 
-
 def models(BOR):
-  
+
   SEED = 42
 
   random.seed(SEED)
@@ -80,6 +79,16 @@ def models(BOR):
   )
 
   print(coefficients)
+
+  # 3. Make predictions on the test data
+  y_pred = lasso_pipe.predict(X_test)
+
+  # 4. Evaluate the model
+  mse = mean_squared_error(y_test, y_pred)
+  r2 = r2_score(y_test, y_pred)
+
+  print(f"Mean Squared Error: {mse}")
+  print(f"R^2 Score: {r2}")
 
 
   Bor["Besorolas"] = np.where(Bor["quality"] < 5.7, "Rossz", "Jó")
@@ -118,13 +127,13 @@ def models(BOR):
   dt_best.fit(X_train, y_train)
 
   rf = RandomForestClassifier(random_state=32)
-  
-  
+
+
   best_min, best_1se, res = choose_best_ccp_alpha(X_train, y_train)
 
   print("Best alpha (min CV error):", best_min)
   print("Best alpha (1-SE rule, preferred):", best_1se)
-  
+
 
   return X_train, X_test, y_train, y_test, rf, dt
 
@@ -147,5 +156,5 @@ def features_and_fitting(train_test_rf_df):
 
   print("Döntési fa CV:", scores_dt.mean())
   print("Random forest CV:", scores_rf.mean())
-  
+
   return scores_dt, scores_rf
