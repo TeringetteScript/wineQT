@@ -1,10 +1,10 @@
 # Wine Quality Analysis
 
-This notebook analyzes a wine quality dataset (`WineQT.csv`) to predict and classify wine quality based on its physicochemical properties.
+This notebook analyzes a red wine quality dataset (`WineQT.csv`) to predict and classify wine quality based on its physicochemical properties. 
 
 ## Dataset
 
-The `WineQT.csv` dataset contains various wine properties and a quality score.
+The `WineQT.csv` dataset contains various wine properties and a quality score for various types of the Portuguese wine type "Vinho Verde". The data can be found on Kaggle (https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009?resource=download), as well as on the UCI Machine Learning Repository (https://archive.ics.uci.edu/dataset/186/wine+quality).
 
 ## Key Functions
 
