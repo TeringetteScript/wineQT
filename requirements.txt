@@ -705,4 +705,3 @@ yfinance==0.2.66
 zict==3.0.0
 zipp==3.23.0
 zstandard==0.25.0
-
